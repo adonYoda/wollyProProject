@@ -1,0 +1,1 @@
+export const customerRegistrationPage = "customer_registration_page"

@@ -1,0 +1,35 @@
+.mainPicture {
+  background: url("../images/Images/pexels-mo-10035858.jpg") center center
+    no-repeat;
+  height: 100vh;
+  display: flex;
+
+  align-items: flex-start;
+}
+
+h1 {
+  font: 58px "Broadway";
+  display: flex;
+  margin: 200px 0 0 300px;
+  width: 217px;
+  height: 66px;
+}
+
+span {
+  color: #fffbfb;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+h2{
+    display: flex;
+    margin: 350px 0 0 450px;
+    font: 48px "Broadway";
+    text-transform: uppercase;
+}
+
+.rectangle{
+    width: 532px;
+    height:306px;
+    margin: 600px 0 0;
+}
