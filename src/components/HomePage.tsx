@@ -1,16 +1,12 @@
-import React from 'react'
-import Main from './Main'
-
-
+import React from "react";
+import Main from "./Main";
 
 const HomePage = () => {
   return (
     <div>
-    
-    <Main />
-  
+      <Main />
     </div>
-  )
-}
+  );
+};
 
-export default HomePage
+export default HomePage;

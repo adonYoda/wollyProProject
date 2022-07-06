@@ -1,9 +1,15 @@
 .mainPicture {
   background: url("../images/Images/pexels-mo-10035858.jpg") center center
-    no-repeat;
+    no-repeat; 
   height: 100vh;
   display: flex;
+  align-items: flex-start;
+}
 
+.mainPicture2{
+ background: url("../images/Images/andre-benz-sLokLIacItI-unsplash.png") center center no-repeat;
+ height: 100vh;
+  display: flex;
   align-items: flex-start;
 }
 

@@ -2,7 +2,7 @@ import { Button } from "@mui/material";
 import React, { useState } from "react";
 import UserLoggedOut from "../iconComponents/UserLoggedOut";
 
-import DropdownMenu from "./Guest/DropdownMenu";
+import DropdownMenuLogIn from "./Guest/DropdownMenuLogIn";
 
 const SignIn = () => {
   const [open, setOpen] = React.useState(false);
@@ -42,7 +42,7 @@ const SignIn = () => {
           Sign In
         </span>
       </Button>
-      <DropdownMenu anchorRef={anchorRef} open={open} setOpen={setOpen} />
+      <DropdownMenuLogIn anchorRef={anchorRef} open={open} setOpen={setOpen} />
     </div>
   );
 };
