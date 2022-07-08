@@ -27,12 +27,7 @@ span {
   margin-right: 20px;
 }
 
-h2{
-    display: flex;
-    margin: 350px 0 0 450px;
-    font: 48px "Broadway";
-    text-transform: uppercase;
-}
+
 
 .rectangle{
     width: 532px;

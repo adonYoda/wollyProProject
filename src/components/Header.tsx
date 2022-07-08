@@ -1,24 +1,49 @@
 import React from "react";
-import style from "../styles/header.module.css";
 import logo from "../images/Icons/Loggo Button.svg";
 import SignIn from "./SignIn";
 import Search from "./Search";
 import Navigation from "./Navigation";
 import IconBar from "./IconBar";
+import { Link } from "react-router-dom";
+import styled from "styled-components";
+
+const MyHeader = styled.div`
+  max-width: 100%;
+  padding: 0 20px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+`;
+const Container = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: space-between;
+  text-align: center;
+`;
+
+const MyLink = styled(Link)`
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  margin-top: 20px;
+  width: 113px;
+  height: 201px;
+`
 
 const Header = () => {
   return (
-    <div className={style.header}>
-      <div className={style.container} >
-      <div className={style.logo}>
-        <img src={logo} alt="WollyProLogo" title="Wolly Pro" />
-      </div>
-      <Search />
-      <SignIn />
-      <IconBar />
-      </div>
+    <MyHeader>
+      <Container>
+        <MyLink to="/homePage">
+          <img src={logo} alt="WollyProLogo" title="Wolly Pro" />
+        </MyLink>
+        <Search />
+        <SignIn />
+        <IconBar />
+      </Container>
       <Navigation />
-    </div>
+    </MyHeader>
   );
 };
 
