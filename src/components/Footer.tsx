@@ -1,5 +1,5 @@
 import React from "react";
-import { Link} from "react-router-dom";
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { Facebook, Instagram, Twitter } from "../iconComponents";
 
@@ -11,21 +11,25 @@ const Title = styled.h2`
 const MySection = styled.div`
   display: flex;
   flex-direction: column;
+  width: 300px;
 `;
+
 const MyFooter = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   text-align: center;
   height: 139px;
-  margin: 0 auto;
-
+  margin: 0 50px;
 `;
 const TextFollowUs = styled.div``;
 
 const MyLink = styled(Link)`
   text-decoration: none;
-`
+`;
+
+
+
 
 const Footer = () => {
   return (
@@ -50,7 +54,7 @@ const Footer = () => {
         <MyLink to="/returns">Returns</MyLink>
       </MySection>
 
-      <MySection>
+      <MySection style={{ width: 400 }}>
         <Title> Follow Us! </Title>
         <TextFollowUs>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos, vel?

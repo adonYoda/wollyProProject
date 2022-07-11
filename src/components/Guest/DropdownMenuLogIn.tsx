@@ -14,6 +14,7 @@ import TextField from "@mui/material/TextField";
 import { useDispatch } from "react-redux";
 //import { createToken } from "../../utils/constants";
 import { RegistrationPage } from "../Customer/RegistrationPage";
+import { validate } from "email-validator";
 
 interface Props {
   anchorRef: any;
@@ -22,13 +23,14 @@ interface Props {
 }
 
 const DropdownMenu: React.FC<Props> = ({ anchorRef, open, setOpen }) => {
-  // const [email, setEmail] = useState('');
-  // const [password, setPassword] = useState('');
-  // const dispatch = useDispatch()
+  const [email, setEmail] = useState("");
+  const [emailIsValid, setEmailIsValid] = useState(false);
+  const [password, setPassword] = useState('');
+  const dispatch = useDispatch()
 
-  // const handleClickSignIn =()=>{
-  //     dispatch(getUser(createToken(email, password)));
-  // }
+  const handleClickLoginIn =()=>{
+      dispatch(getUser(createToken(email, password)));
+  }
 
   const handleClickRegistration = () => {
     console.log("registration");
@@ -41,8 +43,22 @@ const DropdownMenu: React.FC<Props> = ({ anchorRef, open, setOpen }) => {
     ) {
       return;
     }
-
     setOpen(false);
+  };
+
+  const passwordValidate = (e: string) => {
+
+  } 
+
+  const emailValidate = (e: string) => {
+    const email = e;
+    if (validate(email)) {
+      setEmail(email);
+      console.log(email);
+      setEmailIsValid(true);
+    } else {
+      setEmailIsValid(false);
+    }
   };
 
   return (
@@ -88,16 +104,18 @@ const DropdownMenu: React.FC<Props> = ({ anchorRef, open, setOpen }) => {
                     required
                     id="outlined-required"
                     label="Email"
-                    //  onChange={e => setEmail(e.target.value.trim())}
-                    //  value = {email}
+                    onChange={(e) => emailValidate(e.target.value.trim())}
+                    error={!emailIsValid}
+                    // value={email}
                   />
                   <TextField
                     id="outlined-password-input"
                     label="Password"
                     type="password"
                     autoComplete="current-password"
-                    // onChange={(e) => setPassword(e.target.value.trim())}
-                    // value={password}
+                    onChange={(e) => setPassword(e.target.value.trim())}
+                    // error={!passwordIsValid}
+                    value={password}
                   />
 
                   <Link href="#" color="inherit">
@@ -106,7 +124,7 @@ const DropdownMenu: React.FC<Props> = ({ anchorRef, open, setOpen }) => {
                   <div style={{ margin: "2em" }}>
                     <Button
                       variant="contained"
-                      // onClick={() => handleClickSignIn}
+                      onClick={() => handleClickLoginIn}
                     >
                       Sign In
                     </Button>

@@ -1,20 +1,21 @@
 .mainPicture {
   background: url("../images/Images/pexels-mo-10035858.jpg") center center
-    no-repeat; 
+    no-repeat;
   height: 100vh;
   display: flex;
   align-items: flex-start;
 }
 
-.mainPicture2{
- background: url("../images/Images/andre-benz-sLokLIacItI-unsplash.png") center center no-repeat;
- height: 100vh;
+.mainPicture2 {
+  background: url("../images/Images/andre-benz-sLokLIacItI-unsplash.png") center
+    center no-repeat;
+  height: 100vh;
   display: flex;
   align-items: flex-start;
 }
 
 h1 {
-  font: 58px "Broadway";
+  font: 58px "BroadwayNormal";
   display: flex;
   margin: 200px 0 0 300px;
   width: 217px;
@@ -27,10 +28,8 @@ span {
   margin-right: 20px;
 }
 
-
-
-.rectangle{
-    width: 532px;
-    height:306px;
-    margin: 600px 0 0;
+.rectangle {
+  width: 532px;
+  height: 306px;
+  margin: 600px 0 0;
 }
