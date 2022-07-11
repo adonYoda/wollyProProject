@@ -1,5 +1,5 @@
 
-import { Dispatch } from "../types";
+import { Dispatch, UserProfile } from "../types";
 import { baseUrl } from "../utils/constants";
 
 export const PUT_TOKEN = "PUT_TOKEN";
@@ -7,7 +7,10 @@ export const PUT_USER = "PUT_USER";
 
 
 export const putUserAction = (userProfile: UserProfile) => {
-
+    return {
+        type: PUT_USER,
+        payload: userProfile
+    }
 }
 
 export const putTokenAction = (token: string)=>{

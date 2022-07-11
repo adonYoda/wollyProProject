@@ -2,11 +2,15 @@ interface User{
     login: string;
     firstName: string;
     lastName: string;
-    mail: string;
+    email: string;
     phone: string;
 }
 
-
+export interface State {
+    user?: UserProfile;
+    token?: string;
+}
+export type GetState = () => State;
 
 export type Dispatch = (action: Action)=> void;
 export interface Action{
@@ -14,6 +18,10 @@ export interface Action{
     payload?:any;
 }
 
-export interface UserProfile{
+export interface UserProfile extends User {
+
+}
+
+export interface UserRegister extends User {
 
 }

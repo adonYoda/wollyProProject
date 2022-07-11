@@ -8,13 +8,14 @@ import {
   Paper,
   Popper,
 } from "@mui/material";
-//import * as React from 'react';
 import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
 import { useDispatch } from "react-redux";
-//import { createToken } from "../../utils/constants";
 import { RegistrationPage } from "../Customer/RegistrationPage";
 import { validate } from "email-validator";
+import { getUser } from "../../actions/accountAction";
+import { createToken } from "../../utils/constants";
+
 
 interface Props {
   anchorRef: any;
@@ -24,13 +25,14 @@ interface Props {
 
 const DropdownMenu: React.FC<Props> = ({ anchorRef, open, setOpen }) => {
   const [email, setEmail] = useState("");
+  // const [login, setLogin] = useState("");
   const [emailIsValid, setEmailIsValid] = useState(false);
-  const [password, setPassword] = useState('');
-  const dispatch = useDispatch()
+  const [password, setPassword] = useState("");
+  const dispatch = useDispatch();
 
-  const handleClickLoginIn =()=>{
-      dispatch(getUser(createToken(email, password)));
-  }
+  const handleClickLoginIn = () => {
+    dispatch(getUser(createToken(email, password)));
+  };
 
   const handleClickRegistration = () => {
     console.log("registration");
@@ -45,10 +47,6 @@ const DropdownMenu: React.FC<Props> = ({ anchorRef, open, setOpen }) => {
     }
     setOpen(false);
   };
-
-  const passwordValidate = (e: string) => {
-
-  } 
 
   const emailValidate = (e: string) => {
     const email = e;
@@ -115,7 +113,7 @@ const DropdownMenu: React.FC<Props> = ({ anchorRef, open, setOpen }) => {
                     autoComplete="current-password"
                     onChange={(e) => setPassword(e.target.value.trim())}
                     // error={!passwordIsValid}
-                    value={password}
+                    // value={password}
                   />
 
                   <Link href="#" color="inherit">
@@ -124,7 +122,7 @@ const DropdownMenu: React.FC<Props> = ({ anchorRef, open, setOpen }) => {
                   <div style={{ margin: "2em" }}>
                     <Button
                       variant="contained"
-                      onClick={() => handleClickLoginIn}
+                     onClick={() => handleClickLoginIn}
                     >
                       Sign In
                     </Button>
