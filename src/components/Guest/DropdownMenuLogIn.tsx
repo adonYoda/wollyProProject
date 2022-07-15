@@ -10,12 +10,13 @@ import {
 } from "@mui/material";
 import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
-import { useDispatch } from "react-redux";
+
 import { RegistrationPage } from "../Customer/RegistrationPage";
 import { validate } from "email-validator";
 import { getUser } from "../../actions/accountAction";
 import { createToken } from "../../utils/constants";
-
+import { useDispatch } from "react-redux";
+import { Dispatch } from "../../types";
 
 interface Props {
   anchorRef: any;
@@ -28,7 +29,7 @@ const DropdownMenu: React.FC<Props> = ({ anchorRef, open, setOpen }) => {
   // const [login, setLogin] = useState("");
   const [emailIsValid, setEmailIsValid] = useState(false);
   const [password, setPassword] = useState("");
-  const dispatch = useDispatch();
+  const dispatch = useDispatch() as Dispatch;
 
   const handleClickLoginIn = () => {
     dispatch(getUser(createToken(email, password)));
@@ -104,7 +105,7 @@ const DropdownMenu: React.FC<Props> = ({ anchorRef, open, setOpen }) => {
                     label="Email"
                     onChange={(e) => emailValidate(e.target.value.trim())}
                     error={!emailIsValid}
-                    // value={email}
+                  
                   />
                   <TextField
                     id="outlined-password-input"
@@ -120,10 +121,7 @@ const DropdownMenu: React.FC<Props> = ({ anchorRef, open, setOpen }) => {
                     Forgot Password?
                   </Link>
                   <div style={{ margin: "2em" }}>
-                    <Button
-                      variant="contained"
-                     onClick={() => handleClickLoginIn}
-                    >
+                    <Button variant="contained" onClick={handleClickLoginIn}>
                       Sign In
                     </Button>
                   </div>

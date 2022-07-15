@@ -14,7 +14,7 @@ import Pendants from "./Pendants";
 const Main = () => {
   return (
     <Routes>
-      <Route path="/*" element={<HomePage />} />
+      <Route path="/homePage" element={<HomePage />} />
       <Route path="/earrings" element={<Earrings />} />
       <Route path="/necklaces" element={<Necklaces />} />
       <Route path="/pendants" element={<Pendants />} />

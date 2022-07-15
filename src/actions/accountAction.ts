@@ -36,6 +36,8 @@ export const getUser = (token: string) => {
         .then((userProfile)=>{
             dispatch(putUserAction(userProfile));
             dispatch(putTokenAction(token));
+            console.log(token);
+            
         })
         .catch((e) => {
             console.log(e.mesage);

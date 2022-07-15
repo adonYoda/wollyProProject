@@ -17,7 +17,7 @@ const MyNavigation = styled.nav`
 const Navigation = () => {
   return (
     <MyNavigation>
-      <MyLinks to="/earrings">Earrings</MyLinks>
+      <MyLinks to="earrings">Earrings</MyLinks>
       <MyLinks to="necklaces">Necklaces</MyLinks>
       <MyLinks to="pendants">Pendants</MyLinks>
       <MyLinks to="chains">Chains</MyLinks>
